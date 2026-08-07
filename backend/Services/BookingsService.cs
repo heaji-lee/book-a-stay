@@ -26,7 +26,7 @@ public class BookingsService(BookingsRepository bookingsRepository) {
         if (room is null) {
             throw new ArgumentException("Selected room is not available.");
         }
-        
+
         ValidateRoomSelection(room, hotelId, guestCount);
         ValidateNoRoomOverlap(room, checkInDate, checkOutDate);
 
@@ -54,6 +54,9 @@ public class BookingsService(BookingsRepository bookingsRepository) {
 
         if (guestCount <= 0)
             throw new ArgumentException("Guest count must be greater than zero.");
+
+        if (checkInDate.Date < DateTime.Today)
+            throw new ArgumentException("Check-in date cannot be in the past.");
 
         if (checkInDate >= checkOutDate)
             throw new ArgumentException("Check-in date must be before check-out date.");
