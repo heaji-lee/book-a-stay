@@ -25,6 +25,10 @@ It also exposes endpoints to seed and reset test data.
 
 * [.NET 10 SDK](https://dotnet.microsoft.com/en-us/download)
 
+**Hosted Environment**
+
+The API is deployed on Azure App Service. You can access the hosted Swagger UI [here](https://book-a-stay-cedxe5crghcdh9bt.ukwest-01.azurewebsites.net/swagger/index.html). 
+
 **Running locally**
 
 ```bash
