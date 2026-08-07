@@ -34,4 +34,35 @@ public class HotelsRepository {
             })
             .ToListAsync();
     }
+
+    public async Task<List<AvailableRoomDto>> GetAvailableRooms(
+        DateTime CheckInDate,
+        DateTime CheckOutDate,
+        int guests,
+        SortDirection sortDirection
+    ) {
+        var numberOfNights = (CheckOutDate.Date - CheckInDate.Date).Days;
+
+        var query = _context.Rooms
+            .AsNoTracking()
+            .Where(room => room.Capacity >= guests)
+            .Where(room => !room.Bookings.Any(booking =>
+                booking.CheckInDate < CheckOutDate &&
+                booking.CheckOutDate > CheckInDate))
+            .Select(room => new AvailableRoomDto {
+                HotelId = room.HotelId,
+                HotelName = room.Hotel.Name,
+                RoomId = room.Id,
+                RoomType = room.Type.ToString(),
+                Capacity = room.Capacity,
+                TotalPrice = room.Price * numberOfNights
+            });
+
+        query = sortDirection == SortDirection.Descending
+            ? query.OrderByDescending(room => room.TotalPrice)
+            : query.OrderBy(room => room.TotalPrice);
+
+        return await query
+            .ToListAsync();
+    }
 }

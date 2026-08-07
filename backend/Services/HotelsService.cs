@@ -7,4 +7,13 @@ public class HotelsService(HotelsRepository hotelsRepository) {
     public async Task<List<HotelDto>> GetHotelsByName(string? name) {
         return await hotelsRepository.GetHotelsByName(name);
     }
+
+    public async Task<List<AvailableRoomDto>> GetAvailableRooms(
+        DateTime CheckInDate,
+        DateTime CheckOutDate,
+        int guests,
+        SortDirection sortDirection
+    ) {
+        return await hotelsRepository.GetAvailableRooms(CheckInDate, CheckOutDate, guests, sortDirection);
+    }
 }
