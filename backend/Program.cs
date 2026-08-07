@@ -23,6 +23,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<TestDataService>();
 builder.Services.AddScoped<HotelsService>();
 builder.Services.AddScoped<HotelsRepository>();
+builder.Services.AddScoped<BookingsService>();
+builder.Services.AddScoped<BookingsRepository>();
 
 var app = builder.Build();
 
