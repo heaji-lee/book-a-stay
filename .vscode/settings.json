@@ -1,1 +1,4 @@
-{}
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a0c9be00-f4a2-4daf-a59b-294c839099b2/resourceGroups/DefaultResourceGroup-SUK/providers/Microsoft.Web/sites/book-a-stay",
+    "appService.deploySubpath": "."
+}
