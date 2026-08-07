@@ -1,0 +1,21 @@
+# Build output
+bin/
+obj/
+
+# Local SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
+# User-specific editor settings
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Environment-specific configuration
+appsettings.Development.json
+
+# OS files
+.DS_Store
+Thumbs.db
