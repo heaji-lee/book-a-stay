@@ -30,4 +30,22 @@ public class BookingsRepository {
             })
             .FirstOrDefaultAsync();
     }
+
+    public async Task CreateBooking(Booking booking) {
+        _context.Bookings.Add(booking);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<Room?> GetRoomForBooking(int roomId) {
+        return await _context.Rooms
+            .AsNoTracking()
+            .Include(room => room.Bookings)
+            .FirstOrDefaultAsync(room => room.Id == roomId);
+    }
+
+    public async Task<bool> BookingReferenceExists(string bookingReference) {
+        return await _context.Bookings
+            .AsNoTracking()
+            .AnyAsync(b => b.BookingReference == bookingReference);
+    }
 }
