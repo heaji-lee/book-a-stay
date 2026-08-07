@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using BookAStay.Data;
+using BookAStay.Services;
+using BookAStay.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,6 +14,10 @@ builder.Services.AddDbContext<AppDbContext>(options => {
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<TestDataService>();
+builder.Services.AddScoped<HotelsService>();
+builder.Services.AddScoped<HotelsRepository>();
 
 var app = builder.Build();
 
