@@ -21,14 +21,14 @@ public class HotelsController(HotelsService hotelsService) : ControllerBase {
     public async Task<IActionResult> GetAvailableRooms(
       [FromQuery] DateTime CheckInDate,
       [FromQuery] DateTime CheckOutDate,
-      [FromQuery] int guests,
+      [FromQuery] int guestCount,
       [FromQuery] SortDirection sortDirection = SortDirection.Ascending
       ) {
-        if (CheckInDate == default || CheckOutDate == default || CheckOutDate <= CheckInDate || guests <= 0) {
+        if (CheckInDate == default || CheckOutDate == default || CheckOutDate <= CheckInDate || guestCount <= 0) {
             return BadRequest("Provide valid dates and a guest count greater than 0.");
         }
 
-        var availableRooms = await hotelsService.GetAvailableRooms(CheckInDate, CheckOutDate, guests, sortDirection);
+        var availableRooms = await hotelsService.GetAvailableRooms(CheckInDate, CheckOutDate, guestCount, sortDirection);
         return Ok(availableRooms);
     }
 }

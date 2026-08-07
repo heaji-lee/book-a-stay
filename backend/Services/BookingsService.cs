@@ -63,9 +63,6 @@ public class BookingsService(BookingsRepository bookingsRepository) {
     }
 
     private static void ValidateRoomSelection(Room room, int hotelId, int guestCount) {
-        if (room is null)
-            throw new ArgumentException("Selected room is not available.");
-
         if (room.HotelId != hotelId)
             throw new ArgumentException("Selected room does not belong to the specified hotel.");
 
