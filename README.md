@@ -6,8 +6,8 @@
 The API allows a consumer to: 
 
 - Find a hotel by name 
-- Find available rooms between two dates for a given number of guests. 
-- Book a room. 
+- Find available rooms between two dates for a given number of guests
+- Book a room
 - Retrieve booking details by booking reference number
 
 It also exposes endpoints to seed and reset test data. 
