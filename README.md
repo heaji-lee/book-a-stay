@@ -108,4 +108,4 @@ Some features planned for future development include:
 * Implement authentication and authorisation 
 * Add pagination, filtering, and sorting to search hotels and available rooms
 * Introduce logging and monitoring
-* Deploy the API to a cloud provider
+* Implement GitHub actions to allow Continuous Deployment 
