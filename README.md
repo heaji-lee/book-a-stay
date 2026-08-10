@@ -16,7 +16,8 @@ It also exposes endpoints to seed and reset test data.
 
 - **ASP.NET Core (.NET 10)** - Web API
 - **Entity Framework Core** - data access
-- **SQLite** - database
+- **SQL Server / Azure SQL** - production database
+- **SQLite** - test database
 - **Swagger** - API documentation, available at `/swagger` when running locally
 - **xUnit** - automated tests, with an in-memory SQLite database for repository/service-level tests
 
