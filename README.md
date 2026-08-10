@@ -1,18 +1,18 @@
-# Book A Stay
+# Book A Stay 🏖️
 
 
 ## Overview
 
 The API allows a consumer to: 
 
-- Find a hotel by name
+- Find a hotel by name 
 - Find available rooms between two dates for a given number of guests. 
 - Book a room. 
 - Retrieve booking details by booking reference number
 
 It also exposes endpoints to seed and reset test data. 
 
-## Tech Stack
+## Tech Stack 👩🏻‍💻
 
 - **ASP.NET Core (.NET 10)** - Web API
 - **Entity Framework Core** - data access
@@ -40,7 +40,7 @@ dotnet run
 ```
 The API will be available with Swagger UI at `http://localhost:5194/swagger`.
 
-**Testing the API**
+**Testing the API** 🧪
 
 Before using the API, run the **POST** `Seed` endpoint to seed the database with the sample data. 
 Once the database has been seeded, you can try the following endpoints. At any point,if you need to reset the data, run the **DELETE** `Reset` endpoint. 
@@ -99,7 +99,7 @@ Once the database has been seeded, you can try the following endpoints. At any p
 dotnet test book-a-stay.slnx
 ```
 
-## Roadmap
+## Roadmap 🚀
 
 Some features planned for future development include: 
 
