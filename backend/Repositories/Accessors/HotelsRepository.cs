@@ -36,19 +36,19 @@ public class HotelsRepository {
     }
 
     public async Task<List<AvailableRoomDto>> GetAvailableRooms(
-        DateTime CheckInDate,
-        DateTime CheckOutDate,
+        DateTime checkInDate,
+        DateTime checkOutDate,
         int guestCount,
         SortDirection sortDirection
     ) {
-        var numberOfNights = (CheckOutDate.Date - CheckInDate.Date).Days;
+        var numberOfNights = (checkOutDate.Date - checkInDate.Date).Days;
 
         var query = _context.Rooms
             .AsNoTracking()
             .Where(room => room.Capacity >= guestCount)
             .Where(room => !room.Bookings.Any(booking =>
-                booking.CheckInDate < CheckOutDate &&
-                booking.CheckOutDate > CheckInDate))
+                booking.CheckInDate < checkOutDate &&
+                booking.CheckOutDate > checkInDate))
             .Select(room => new AvailableRoomDto {
                 HotelId = room.HotelId,
                 HotelName = room.Hotel.Name,

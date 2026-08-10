@@ -9,11 +9,11 @@ public class HotelsService(HotelsRepository hotelsRepository) {
     }
 
     public async Task<List<AvailableRoomDto>> GetAvailableRooms(
-        DateTime CheckInDate,
-        DateTime CheckOutDate,
+        DateTime checkInDate,
+        DateTime checkOutDate,
         int guestCount,
         SortDirection sortDirection
     ) {
-        return await hotelsRepository.GetAvailableRooms(CheckInDate, CheckOutDate, guestCount, sortDirection);
+        return await hotelsRepository.GetAvailableRooms(checkInDate, checkOutDate, guestCount, sortDirection);
     }
 }
