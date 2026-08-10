@@ -10,7 +10,7 @@ namespace tests;
 public class HotelsServiceTests {
     [Fact]
     public async Task GetHotelsByName_ShouldReturnAllHotels_WhenNameIsNull() {
-        var (context, service) = await CreateServiceAsync();
+        var (_, service) = await CreateServiceAsync();
 
         var result = await service.GetHotelsByName(null);
 

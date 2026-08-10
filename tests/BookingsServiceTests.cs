@@ -1,4 +1,4 @@
-﻿using BookAStay.Data;
+using BookAStay.Data;
 using BookAStay.Repositories;
 using BookAStay.Repositories.Models;
 using BookAStay.Services;
@@ -225,7 +225,7 @@ public class BookingsServiceTests {
         await context.Database.EnsureCreatedAsync();
 
         var hotel = new Hotel {
-            Name = "Test Hotel"
+            Name = "Helen's Hotel"
         };
 
         var room = new Room {
