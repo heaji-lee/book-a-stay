@@ -13,7 +13,7 @@ public class HotelsController(HotelsService hotelsService) : ControllerBase {
     public async Task<IActionResult> GetHotelsByName([FromQuery] string? name) {
         var hotels = await hotelsService.GetHotelsByName(name);
 
-        return Ok(hotels);
+        return hotels is null || hotels.Count == 0 ? NotFound("No hotels found.") : Ok(hotels);
     }
 
     // GET: api/hotels?checkIn={checkIn}&checkOut={checkOut}&guests={numberOfGuests}
@@ -29,6 +29,7 @@ public class HotelsController(HotelsService hotelsService) : ControllerBase {
         }
 
         var availableRooms = await hotelsService.GetAvailableRooms(CheckInDate, CheckOutDate, guestCount, sortDirection);
-        return Ok(availableRooms);
+
+        return availableRooms is null || availableRooms.Count == 0 ? NotFound("No available rooms found for the specified criteria.") : Ok(availableRooms);
     }
 }
