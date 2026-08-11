@@ -13,7 +13,13 @@ public class HotelsController(HotelsService hotelsService) : ControllerBase {
     public async Task<IActionResult> GetHotelsByName([FromQuery] string? name) {
         var hotels = await hotelsService.GetHotelsByName(name);
 
-        return hotels is null || hotels.Count == 0 ? NotFound("No hotels found.") : Ok(hotels);
+        if (string.IsNullOrWhiteSpace(name)) {
+            return Ok(hotels ?? new List<HotelDto>());
+        }
+
+        return hotels is null || hotels.Count == 0
+            ? NotFound("No hotels found for the specified search term.")
+            : Ok(hotels);
     }
 
     // GET: api/hotels?checkIn={checkIn}&checkOut={checkOut}&guests={numberOfGuests}
