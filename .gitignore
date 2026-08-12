@@ -21,3 +21,4 @@ appsettings.Development.json
 Thumbs.db
 
 .editorconfig
+publish/
