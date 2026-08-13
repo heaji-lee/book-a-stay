@@ -91,8 +91,8 @@ public class BookingsService(BookingsRepository bookingsRepository) {
     private static string GenerateBookingReference() {
         var characters = new char[6];
 
-        for (var index = 0; index < characters.Length; index++) {
-            characters[index] = ReferenceCharacters[
+        for (var i = 0; i < characters.Length; i++) {
+            characters[i] = ReferenceCharacters[
                 RandomNumberGenerator.GetInt32(ReferenceCharacters.Length)];
         }
 
