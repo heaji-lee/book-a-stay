@@ -8,7 +8,7 @@ namespace BookAStay.Controllers;
 [Route("api/[controller]")]
 public class BookingsController(BookingsService bookingsService) : ControllerBase {
 
-    // GET: api/bookings?referenceNumber={referenceNumber}
+    // GET: api/bookings/{referenceNumber}
     [HttpGet("{referenceNumber}")]
     public async Task<IActionResult> GetBooking(
       [FromRoute] string referenceNumber = ""
