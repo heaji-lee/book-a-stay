@@ -230,7 +230,7 @@ public class BookingsServiceTests {
 
         var room = new Room {
             Hotel = hotel,
-            Type = RoomType.Single,
+            Type = RoomType.Double,
             Capacity = 2,
             Price = 100m
         };
