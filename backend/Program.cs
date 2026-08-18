@@ -14,7 +14,12 @@ builder.Services.AddControllers()
     });
 
 builder.Services.AddDbContext<AppDbContext>(options => {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    if (builder.Environment.IsDevelopment()) {
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
+    }
+    else {
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    }
 });
 
 builder.Services.AddEndpointsApiExplorer();

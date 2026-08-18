@@ -13,9 +13,6 @@ obj/
 *.user
 *.suo
 
-# Environment-specific configuration
-appsettings.Development.json
-
 # OS files
 .DS_Store
 Thumbs.db
