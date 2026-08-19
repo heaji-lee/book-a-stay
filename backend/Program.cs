@@ -31,6 +31,15 @@ builder.Services.AddScoped<HotelsRepository>();
 builder.Services.AddScoped<BookingsService>();
 builder.Services.AddScoped<BookingsRepository>();
 
+builder.Services.AddCors(options => {
+    options.AddPolicy("ReactFrontend", policy => {
+        policy
+            .WithOrigins("http://localhost:5173")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope()) {
@@ -43,6 +52,8 @@ app.UseSwagger();
 app.UseSwaggerUI();
 //}
 app.UseHttpsRedirection();
+
+app.UseCors("ReactFrontend");
 
 app.UseAuthorization();
 
