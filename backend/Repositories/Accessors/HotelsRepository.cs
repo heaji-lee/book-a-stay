@@ -30,7 +30,8 @@ public class HotelsRepository {
                     Name = room.Type.ToString(),
                     Capacity = room.Capacity,
                     Price = room.Price
-                }).ToList()
+                }).ToList(),
+                ImageUrl = hotel.ImageUrl
             })
             .ToListAsync();
     }

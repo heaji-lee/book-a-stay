@@ -14,7 +14,8 @@ public static class SeedData {
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 125.78m },
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 135.36m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 200.00m }
-                ]
+                ],
+                ImageUrl = "/images/hotels/park-heart-hotel.jpg"
             },
             new Hotel {
                 Name = "The Playa Hotel",
@@ -25,7 +26,8 @@ public static class SeedData {
                     new Room { Type = RoomType.Deluxe, Capacity = 3, Price = 162.30m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 178.60m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 245.00m }
-                ]
+                ],
+                ImageUrl = "/images/hotels/the-playa-hotel.jpg"
             },
             new Hotel {
                 Name = "Bitz Hotel",
@@ -36,7 +38,8 @@ public static class SeedData {
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 127.20m },
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 139.40m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 189.00m }
-                ]
+                ],
+                ImageUrl = "/images/hotels/bitz-hotel.jpg"
             },
             new Hotel {
                 Name = "Four Seasonings Hotel",
@@ -47,7 +50,8 @@ public static class SeedData {
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 165.00m },
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 178.95m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 295.00m }
-                ]
+                ],
+                ImageUrl = "/images/hotels/four-seasonings-hotel.jpg"
             },
             new Hotel {
                 Name = "Tilhon Hotel",
@@ -58,7 +62,8 @@ public static class SeedData {
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 156.20m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 170.40m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 229.00m }
-                ]
+                ],
+                ImageUrl = "/images/hotels/tilhon-hotel.jpg"
             },
             new Hotel {
                 Name = "The Villa Hotel",
@@ -69,7 +74,8 @@ public static class SeedData {
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 151.95m },
                     new Room { Type = RoomType.Double, Capacity = 2, Price = 165.40m },
                     new Room { Type = RoomType.Deluxe, Capacity = 4, Price = 261.35m }
-                ]
+                ],
+                ImageUrl = "/images/hotels/the-villa-hotel.jpg"
             }
         ];
     }

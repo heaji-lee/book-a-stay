@@ -19,16 +19,18 @@ function Home() {
 
     return (
         <>
-            <h1 className="bg-amber-400 p-8 text-4xl font-bold text-black">
-                Tailwind is workingd
-            </h1>
-            <h1 className="bg-amber-400">Hotels</h1>
-            {error && <p>{error}</p>}
-            <ul>
-                {hotels.map(hotel => (
-                    <li key={hotel.id}>{hotel.name}</li>
-                ))}
-            </ul>
+            <div>
+                <p className="text-2xl">Hotels</p>
+                {error && <p>{error}</p>}
+                <ul>
+                    {hotels.map(hotel => (
+                        <div>
+                            <li key={hotel.id}>{hotel.name}</li>
+                            <img src={`${apiBaseUrl}${hotel.imageUrl}`} />
+                        </div>
+                    ))}
+                </ul>
+            </div>
         </>
     );
 }
