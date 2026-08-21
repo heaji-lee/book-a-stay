@@ -37,6 +37,7 @@ public class HotelsRepository {
     }
 
     public async Task<List<AvailableRoomDto>> GetAvailableRooms(
+        string hotel,
         DateTime checkInDate,
         DateTime checkOutDate,
         int guestCount,

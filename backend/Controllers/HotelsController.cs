@@ -25,6 +25,7 @@ public class HotelsController(HotelsService hotelsService) : ControllerBase {
     // GET: api/hotels?checkIn={checkIn}&checkOut={checkOut}&guests={numberOfGuests}
     [HttpGet("available-rooms")]
     public async Task<IActionResult> GetAvailableRooms(
+      [FromQuery] string? hotel,
       [FromQuery] DateTime checkInDate,
       [FromQuery] DateTime checkOutDate,
       [FromQuery] int guestCount,
@@ -34,7 +35,7 @@ public class HotelsController(HotelsService hotelsService) : ControllerBase {
             return BadRequest("Provide valid dates and a guest count greater than 0.");
         }
 
-        var availableRooms = await hotelsService.GetAvailableRooms(checkInDate, checkOutDate, guestCount, sortDirection);
+        var availableRooms = await hotelsService.GetAvailableRooms(hotel, checkInDate, checkOutDate, guestCount, sortDirection);
 
         return availableRooms is null || availableRooms.Count == 0 ? NotFound("No available rooms found for the specified criteria.") : Ok(availableRooms);
     }

@@ -20,13 +20,25 @@ function Home() {
     return (
         <>
             <div>
-                <p className="text-2xl">Hotels</p>
                 {error && <p>{error}</p>}
                 <ul>
                     {hotels.map(hotel => (
                         <div>
                             <li key={hotel.id}>{hotel.name}</li>
-                            <img src={`${apiBaseUrl}${hotel.imageUrl}`} />
+                            <div className="hover-3d">
+                                <figure className="w-60 rounded-2xl">
+                                    <img src={`${apiBaseUrl}${hotel.imageUrl}`} />
+                                </figure>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+
                         </div>
                     ))}
                 </ul>
